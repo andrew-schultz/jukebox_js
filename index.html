@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jukebox</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header>
+		<h1 id="title">
+			Jukebox
+		</h1>
+	</header>
+	<div id="page">
+
+		<audio id="song" <source src="" type="audio/mpeg" preload="auto" >
+		</audio>
+
+		<div id="display">
+			none
+		</div>
+
+		<div onclick="jukebox.play()" id="play" >
+		</div>
+
+		<div onclick="jukebox.pause()" id="pause" >
+		</div>
+
+		<div onclick="jukebox.next()" id="next" >
+		</div>
+
+		<div onclick="jukebox.previous()" id="back" >
+		</div>
+
+		<div onclick="jukebox.random()" id="random" >
+		</div>
+
+		<div onclick="jukebox.volumeUp()" id="vUp" >
+		</div>
+
+		<div onclick="jukebox.volumeDown()" id="vDown" >
+		</div>
+
+		<label name="songTitle">Title</label>
+		<input type="text" name="songTitle" id="songTitle" />
+		<br>
+		<label name="songArtist">Artist</label>
+		<input type="text" name="songArtist" id="songArtist" />
+		<br>
+		<label name="songURL">URL</label>
+		<input type="text" name="songURL" id="addSong" />
+		<br>
+		<button id="addButton" onclick="jukebox.addSong()" >add Song </button>
+
+	</div>
+
+
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
