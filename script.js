@@ -16,17 +16,24 @@ var Jukebox = function(){
 
 	var a = document.getElementsByTagName("audio")[0];
 	var list = document.getElementById("list");
+	var p = document.getElementById("play");
+	var s = document.getElementById("pause");
 	
 	// when called will play the selected audio file
 	this.play = function(){
+		song.setAttribute("src", this.songs[i].url);
 		a.play();
 		displayT.innerHTML = (this.songs[i].title);
-		displayA.innerHTML = (this.songs[i].artist)
+		displayA.innerHTML = (this.songs[i].artist);
+		p.className = "hide";
+		s.className = "";
 	},
 
 	// when called will pause the selected audio file
 	this.pause = function(){
 		a.pause();
+		p.className = "";
+		s.className = "hide";
 	},
 
 	this.volumeUp = function(){
@@ -41,7 +48,7 @@ var Jukebox = function(){
 
 	this.addSong = function(i){
 	// adds song selected (file) to the songs array
-		url = document.getElementById("addSong").value
+		// url = document.getElementById("addSong").value
 		Song.apply(this, arguments)
 		i = new Song()
 		this.songs.push(i)

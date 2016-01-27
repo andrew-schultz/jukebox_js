@@ -2,7 +2,8 @@
 <html>
 <head>
 	<title>Jukebox</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<audio id="song" <source src="" type="audio/mpeg" preload="auto" >
@@ -24,10 +25,36 @@
 			</div>
 		</div>
 		<div id="playbar">
+			<div onclick="jukebox.previous()" id="back">
+				<div id="backbar">
+				</div>
+				<div id="backarrow">
+				</div>
+			</div>	
 			<div id="playcircle" class="circle center">
 				<div onclick="jukebox.play()" id="play" >
-					
 				</div>
+				<div onclick="jukebox.pause()" id="pause" class="hide">
+					<div class="pause pause1">
+					</div>
+					<div class="pause">
+					</div>
+				</div>
+			</div>
+			<div onclick="jukebox.next()" id="next" >
+				<div id="nextarrow">
+				</div>
+				<div id="nextbar">
+				</div>
+			</div>
+			<div onclick="jukebox.random()" id="random" >
+				<i class="fa fa-random"></i>
+			</div>
+			<div onclick="jukebox.volumeDown()" id="vDown" >
+				<i class="fa fa-volume-down"></i>
+			</div>
+			<div onclick="jukebox.volumeUp()" id="vUp" >
+				<i class="fa fa-volume-up"></i>
 			</div>
 		</div>
 	
@@ -35,26 +62,6 @@
 			<ul id="list">
 
 			</ul>
-		</div>
-
-		
-
-		<div onclick="jukebox.pause()" id="pause" >
-		</div>
-
-		<div onclick="jukebox.next()" id="next" >
-		</div>
-
-		<div onclick="jukebox.previous()" id="back" >
-		</div>
-
-		<div onclick="jukebox.random()" id="random" >
-		</div>
-
-		<div onclick="jukebox.volumeUp()" id="vUp" >
-		</div>
-
-		<div onclick="jukebox.volumeDown()" id="vDown" >
 		</div>
 
 		<label name="songTitle">Title</label>

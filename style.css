@@ -35,11 +35,23 @@ header {
 	width: 100%;
 	height: 300px;
 	background-color: #388E3C;
+	position: relative;
 }
 
 #playbar {
 	width: 100%;
 	background-color: #FFECB3;
+}
+
+.pause {
+	width: 20px;
+	height: 100%;
+	background-color: red;
+	float: left;
+}
+
+.pause1 {
+	margin-right: 10px;
 }
 
 #play {
@@ -53,39 +65,87 @@ header {
 	margin-top: 20px;
 }
 
+.hide {
+	display: none;
+}
+
 #pause {
 	width: 50px;
 	height: 50px;
-	background-color: red;
+	margin-left: 30px;
+	position: absolute;
+	margin-top: 25px;
 }
 
 #next {
-	width: 100px;
-	height: 25px;
-	background-color: blue;
+	width: 50px;
+	height: 50px;
+	float: right;
+	margin-top: -65px;
+	margin-right: 39%;
+}
+
+#nextarrow {
+	border-left: 25px solid red;
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+	float: left;
+	margin-right: 5px;
+}
+
+#nextbar {
+	width: 6px;
+	height: 30px;
+	background-color: red;
+	float: left;
 }
 
 #back {
-	width: 100px;
-	height: 25px;
-	background-color: brown;
+	width: 50px;
+	height: 50px;
+	margin-left: 39%;
+	position: absolute;
+	margin-top: 37px;
+}
+
+#backarrow {
+	border-right: 25px solid red;
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent; 
+	float: left;
+	margin-left: 5px;
+}
+
+#backbar {
+	height: 30px;
+	width: 6px;
+	background-color: red;
+	float: left;
 }
 
 #random {
-	width: 100px;
-	height: 25px;
-	background-color: purple;
+	width: 30px;
+	height: 30px;
+	float: right;
+	margin-right: 35%;
+	margin-top: -59px;
+}
+
+#random i {
+	font-size: 22px;
+	color: red;
 }
 
 #display {
 	font-size: 24px;
-	width: 200px;
+	width: 250px;
 	padding: 20px;
 	text-align: center;
 	border: 2px solid #FFECB3;
 	position: absolute;
-	margin-top: 11vh;
 	margin-left: 40%;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 #display div {
@@ -96,11 +156,25 @@ header {
 #vUp {
 	width: 25px;
 	height: 25px;
-	border: 1px solid;
+	float: right;
+	margin-top: -30px;
+	margin-right: 30px;
+}
+
+#vUp i {
+	font-size: 25px;
+	color: red;
 }
 
 #vDown {
 	width: 25px;
 	height: 25px;
-	border: 1px solid green;
+	float: right;
+	margin-top: -30px;
+	margin-right: 60px;
+}
+
+#vDown i {
+	font-size: 25px;
+	color: red;
 }
