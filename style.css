@@ -8,13 +8,21 @@ header {
 	width: 100%;
 	text-align: center;
 	padding: 2px;
-	background-color: #f2f2f2;
+	background-color: #283593;
+	padding-bottom: 12px;
+	color: #ffffff;
+}
+
+ul {
+	list-style-type: decimal;
 }
 
 #playcircle {
-	width: 100px;
-	height: 100px;
-	background-color: #FFECB3;
+	width: 70px;
+	height: 70px;
+	background-color: #283593;
+	z-index: 100;
+	position: relative;
 }
 
 .center {
@@ -33,20 +41,23 @@ header {
 
 #jumbo {
 	width: 100%;
-	height: 300px;
-	background-color: #388E3C;
+	height: 500px;
+	background-color: #283593;
 	position: relative;
 }
 
 #playbar {
 	width: 100%;
-	background-color: #FFECB3;
+	background-color: #E8EAF6;
+	padding-top: 5px;
+	padding-bottom: 5px; 
+
 }
 
 .pause {
-	width: 20px;
-	height: 100%;
-	background-color: red;
+	width: 12px;
+	height: 35px;
+	background-color: #ffffff;
 	float: left;
 }
 
@@ -57,12 +68,12 @@ header {
 #play {
 	width: 0;
 	height: 0;
-	border-top: 30px solid transparent;
-	border-left: 50px solid red;
-	border-bottom: 30px solid transparent;
-	margin-left: 32px;
+	border-top: 20px solid transparent;
+	border-left: 35px solid #ffffff;
+	border-bottom: 20px solid transparent;
+	margin-left: 25px;
 	position: absolute;
-	margin-top: 20px;
+	margin-top: 16px;
 }
 
 .hide {
@@ -70,56 +81,54 @@ header {
 }
 
 #pause {
-	width: 50px;
-	height: 50px;
-	margin-left: 30px;
+	width: 35px;
+	height: 35px;
+	margin-left: 19px;
 	position: absolute;
-	margin-top: 25px;
+	margin-top: 19px;
 }
 
 #next {
 	width: 50px;
 	height: 50px;
 	float: right;
-	margin-top: -65px;
-	margin-right: 39%;
+	margin-top: -46px;
+	margin-right: 40.3%;
 }
 
 #nextarrow {
-	border-left: 25px solid red;
-	border-top: 15px solid transparent;
-	border-bottom: 15px solid transparent;
+	border-left: 18px solid #283593;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
 	float: left;
-	margin-right: 5px;
 }
 
 #nextbar {
 	width: 6px;
-	height: 30px;
-	background-color: red;
+	height: 20px;
+	background-color: #283593;
 	float: left;
 }
 
 #back {
 	width: 50px;
 	height: 50px;
-	margin-left: 39%;
+	margin-left: 42%;
 	position: absolute;
-	margin-top: 37px;
+	margin-top: 25px;
 }
 
 #backarrow {
-	border-right: 25px solid red;
-	border-top: 15px solid transparent;
-	border-bottom: 15px solid transparent; 
+	border-right: 18px solid #283593;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent; 
 	float: left;
-	margin-left: 5px;
 }
 
 #backbar {
-	height: 30px;
+	height: 20px;
 	width: 6px;
-	background-color: red;
+	background-color: #283593;
 	float: left;
 }
 
@@ -127,30 +136,32 @@ header {
 	width: 30px;
 	height: 30px;
 	float: right;
+	clear: right;
 	margin-right: 35%;
-	margin-top: -59px;
+	margin-top: -48px;
 }
 
 #random i {
-	font-size: 22px;
-	color: red;
+	font-size: 20px;
+	color: #283593;
 }
 
 #display {
 	font-size: 24px;
-	width: 250px;
+	width: 270px;
 	padding: 20px;
 	text-align: center;
-	border: 2px solid #FFECB3;
+	border: 2px solid #ffffff;
+	border-radius: 10px;
 	position: absolute;
-	margin-left: 40%;
+	margin-left: 39%;
 	top: 50%;
 	transform: translateY(-50%);
 }
 
 #display div {
 	padding: 10px;
-	color: #FFECB3;
+	color: #ffffff;
 }
 
 #vUp {
@@ -158,12 +169,12 @@ header {
 	height: 25px;
 	float: right;
 	margin-top: -30px;
-	margin-right: 30px;
+	margin-right: 2%;
 }
 
 #vUp i {
 	font-size: 25px;
-	color: red;
+	color: #283593;
 }
 
 #vDown {
@@ -171,10 +182,56 @@ header {
 	height: 25px;
 	float: right;
 	margin-top: -30px;
-	margin-right: 60px;
+	margin-right: 4%;
 }
 
 #vDown i {
 	font-size: 25px;
-	color: red;
+	color: #283593;
+}
+
+.form {
+	width: 260px;
+	position: absolute;
+	top: 51%;
+	transform: translateY(-49%);
+	margin-left: 9%;
+}
+
+.userinput {
+	float: right;
+	padding:3px;
+	border: 2px solid #ffffff;
+	border-radius: 7px;
+	background-color: #283593;
+	color: #ffffff;
+	font-size: 16px;
+}
+
+label {
+	color: #ffffff;
+	font-size: 20px;
+}
+
+.topspace {
+	margin-top: 15px;
+}
+
+.button {
+	clear: both;
+	float: right;
+	border: 2px solid #ffffff;
+	border-radius: 5px;
+	color: #ffffff;
+	background-color: #283593;
+}
+
+#playlist {
+	margin-left: 73%;
+	position: absolute;
+	top: 49%;
+	transform: translateY(-51%);
+	color: #ffffff;
+	overflow: scroll;
+	max-height: 280px;
 }
