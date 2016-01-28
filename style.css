@@ -31,6 +31,10 @@ ul {
 	position: relative;
 }
 
+.plsong {
+	padding: 5px 0;
+}
+
 .center {
 	margin-left: auto;
 	margin-right: auto;
@@ -219,6 +223,7 @@ ul {
 	border-radius: 5px;
 	font-size: 18px;
 	float: right;
+	color: #ffffff;
 }
 
 #playlist {
@@ -261,7 +266,7 @@ ul {
 		margin-right: 10%
 	}
 
-	
+
 	.form {
 		margin-top: 5%;
 	}

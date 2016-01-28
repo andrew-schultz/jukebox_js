@@ -12,7 +12,9 @@ function Bong(title, artist, url){
 	this.url = url
 }
 
-
+function Getit(){
+	var x = document.get
+}
 
 var Jukebox = function(){
 	// Thanks mozilla developer guides for helping with the syntax!
@@ -26,6 +28,7 @@ var Jukebox = function(){
 	var p = document.getElementById("play");
 	var s = document.getElementById("pause");
 	var display = document.getElementById("display");
+	var idnum = 0
 
 	// when called will play the selected audio file
 	this.play = function(){
@@ -66,16 +69,17 @@ var Jukebox = function(){
 		// creates an li node
 		var title = document.createTextNode((document.getElementById("songTitle").value) + ", " + (document.getElementById("songArtist").value));
 		// creates the text "node" for title and artist to go within the li
-		var x = document.createElement("i");
-		x.className = "fa" + "fa-times";
+		var id = li.setAttribute("id", idnum);
+		// creates an idea for the li equal to the elements location in the list
 		li.appendChild(title);
-		li.appendChild(x);
 		// adds the title and artist to the li
-		// li.className = "song";
-		// gives the li a class
 		document.getElementById("list").appendChild(li);
 		// appends the li to the end of the ul with the id list
+		idnum += 1;
 	}
+	
+// element.addEventListener('click',handlerFunction,false); 
+
 
 	this.preload = function(x){
 		this.songs.push(x)
@@ -84,27 +88,32 @@ var Jukebox = function(){
 		// creates an li node
 		var title = document.createTextNode((x.title) + ", " + (x.artist));
 		// creates the text "node" for title and artist to go within the li
-		var x = document.createElement("i");
-		x.className = "fa" + "fa-times";
+		var iq = li.setAttribute("id", idnum);
+		var zi = li.id;
+		console.log(zi);
+		li.setAttribute("class", "plsong");
+		
+		li.setAttribute("onclick", "jukebox.jump(" + zi + ")");
+		
 		li.appendChild(title);
-		li.appendChild(x);
 		// adds the title and artist to the li
-		// li.className = "song";
-		// gives the li a class
 		document.getElementById("list").appendChild(li);
 		// appends the li to the end of the ul with the id list
+
+		idnum += 1;
 	}
-	
 
+	this.getElementBy
 	
-
-	this.jump = function(){
-		var jump = document.getElementByClassName
-		song.setAttribute("src", this.songs[i].url);
-		displayT.innerHTML = (this.songs[i].title);
-		displayA.innerHTML = (this.songs[i].artist);
+	this.jump = function(par){
+		i = par;
+		song.setAttribute("src", this.songs[par].url);
+		displayT.innerHTML = (this.songs[par].title);
+		displayA.innerHTML = (this.songs[par].artist);
 		a.play();
 	}
+
+	
 
 	var song = document.getElementById('song');
 
