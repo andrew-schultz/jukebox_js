@@ -49,7 +49,6 @@ ul {
 	width: 100%;
 	height: 500px;
 	background-color: #283593;
-	position: relative;
 }
 
 #playbar {
@@ -152,28 +151,6 @@ ul {
 	color: #283593;
 }
 
-#smdisplay {
-	display: none;
-}
-
-#display {
-	font-size: 24px;
-	width: 270px;
-	padding: 20px;
-	text-align: center;
-	border: 2px solid #ffffff;
-	border-radius: 10px;
-	position: absolute;
-	margin-left: 38.6%;
-	top: 50%;
-	transform: translateY(-50%);
-}
-
-#display div {
-	padding: 10px;
-	color: #ffffff;
-}
-
 #vUp {
 	width: 25px;
 	height: 25px;
@@ -200,112 +177,131 @@ ul {
 	color: #283593;
 }
 
-.form {
-	width: 260px;
-	position: absolute;
-	top: 51%;
-	transform: translateY(-49%);
-	margin-left: 9%;
-}
-
-.userinput {
+.button {
 	float: right;
-	padding:3px;
-	border: 2px solid #ffffff;
-	border-radius: 7px;
+	clear: both;
 	background-color: #283593;
 	color: #ffffff;
-	font-size: 16px;
+	border: 2px solid #ffffff;
+	border-radius: 5px;
+	font-size: 14px;
 }
 
-label {
+.topspace {
+	margin-top: 10px;
+}
+
+#display {
+	padding: 20px;
+	min-width: 200px;
+	border: 2px solid white;
+	max-width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	color: white;
+	font-size: 24px;
+	border-radius: 10px;
+	margin-top: 20vh;
+}
+
+.form {
+	float: left;
+	margin-left: 5%;
+	margin-top: -9%;
 	color: #ffffff;
 	font-size: 20px;
 }
 
-.topspace {
-	margin-top: 15px;
-}
-
-.button {
-	clear: both;
-	float: right;
+.userinput {
+	background-color: #283593;
 	border: 2px solid #ffffff;
 	border-radius: 5px;
-	color: #ffffff;
-	background-color: #283593;
+	font-size: 18px;
+	float: right;
 }
 
 #playlist {
-	margin-left: 73%;
-	position: absolute;
-	top: 49%;
-	transform: translateY(-51%);
+	float: right;
+	max-width: 300px;
+	margin-right: 5%;
+	margin-top: -13%;
 	color: #ffffff;
-	overflow: scroll;
-	max-height: 280px;
 }
 
-
-@media all and (max-width: 480px) {
-	header h1 {
-		font-size: 28px;
+@media all and (max-width: 960px) and (min-width: 481px) {
+	#display {
+		margin-top: 2%;
 	}
 
 	#next {
-		margin-right: 19.5%;
+		margin-right:22%;
 	}
 
 	#back {
-		margin-left: 25%;
+		margin-left: 29%;
 	}
 
 	#random {
-		margin-right: 13%;
+		margin-right: 10%
+	}
+
+	.form {
+		margin-top: 5%;
+	}
+
+	#playlist {
+		max-width: 275px;
+		margin-top: 2%;
+	}
+}
+
+@media all and (max-width: 480px) {
+
+	#display {
+		margin-top: 2%;
+	}
+
+	.form {
+		margin-top: 2%;
+		margin-right: auto;
+		margin-left: auto;
+		width: 250px;
+		padding: 10px;
+		float: none;
+	}
+
+	#playlist {
+		border-radius: 10px;
+		border: 2px solid #ffffff;
+		padding: 10px;
+		margin-top: 2%;
+		margin-left: auto;
+		margin-right: auto;
+		float: none;
+		max-width: 300px;
+		min-width: 200px;
+	}
+
+	#next {
+		margin-right:20%;
+	}
+
+	#back {
+		margin-left: 27%;
+	}
+
+	#random {
+		margin-right: 7%
 	}
 
 	#vUp {
 		float: left;
-		margin-left: 35px;
+		margin-left: 7%;
 	}
 
 	#vDown {
-		margin-left: 10px;
 		float: left;
-	}
-
-	.form {
-		float: left;
-		clear: left;
-		position: relative;
-		margin-top: 275px;
-		margin-left: 13.5%;
-		border: 2px solid #ffffff;
-		border-radius: 10px;
-		padding: 13px;
-	}
-
-	#display {
-		font-size: 24px;
-		width: 270px;
-		padding: 20px;
-		margin-left: 11%;
-		margin-top: -170px;
-		text-align: center;
-		border: 2px solid #ffffff;
-		border-radius: 10px;
-	}
-
-
-	#playlist {
-		margin-left: 12.25%;
-		margin-top: 55px;
-		border: 2px solid #ffffff;
-		border-radius: 10px;
-		max-width: 300px;
-	}
-
-	#list li {
-		padding: 3px;
-	}
+		margin-left: 1%;
+		}
 }

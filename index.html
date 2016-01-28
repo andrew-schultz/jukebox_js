@@ -50,13 +50,26 @@
 			</div>
 		</div>
 		<div id="jumbo">
-			<div id="smdisplay" class="center">
-				<div id="displayTs">
+			<div id="display">
+				<div id="displayT">
 					Fire on the Mountain
 				</div>
-				<div id="displayAs">
+				<div id="displayA">
 					Grateful Dead
 				</div>
+			</div>
+			
+			<!-- <div id="display">
+				<div id="displayT">
+					Fire on the Mountain
+				</div>
+				<div id="displayA">
+					Grateful Dead
+				</div>
+			</div> -->
+			<div id="playlist">
+				<ul id="list">
+				</ul>
 			</div>
 			<div class="form">
 				<label name="songTitle">Title</label>
@@ -69,19 +82,7 @@
 				<br>
 				<label name="songURL">URL</label>
 				<input type="text" name="songURL" id="addSong" class="userinput"/>
-				<button id="addButton" onclick="jukebox.addSong()" class="button topspace">add Song </button>
-			</div>
-			<div id="display">
-				<div id="displayT">
-					Fire on the Mountain
-				</div>
-				<div id="displayA">
-					Grateful Dead
-				</div>
-			</div>
-			<div id="playlist">
-				<ul id="list">
-				</ul>
+				<button id="addButton" onclick="jukebox.addSong()" class="button topspace">Add Song</button>
 			</div>
 		</div>
 	</div>
