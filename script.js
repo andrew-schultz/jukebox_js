@@ -25,7 +25,7 @@ var Jukebox = function(){
 	var s = document.getElementById("pause");
 	var display = document.getElementById("display");
 	var song = document.getElementById('song');
-	var idnum = 0
+	var idnum = 0;
 	var leng = song.duration;
 
 	// when called will play the selected audio file
@@ -125,6 +125,8 @@ var Jukebox = function(){
 		displayT.innerHTML = (this.songs[i].title);
 		displayA.innerHTML = (this.songs[i].artist);
 		this.time(leng);
+		p.className = "hide";
+		s.className = "";
 		a.play();
 	}
 
@@ -139,6 +141,8 @@ var Jukebox = function(){
 		displayT.innerHTML = (this.songs[i].title);
 		displayA.innerHTML = (this.songs[i].artist);
 		this.time(leng);
+		p.className = "hide";
+		s.className = "";
 		a.play();
 	}
 
@@ -154,18 +158,23 @@ var Jukebox = function(){
 		s.className = "";
 	}
 
+	///////for some reason this isn't woking right now
+	///
 	this.time = function(){
-		// sets the div with the id to a variable
+		// sets the div with the id (progress)to a variable
 		var progress = document.getElementById("progress");
 		// sets a variable (width) to 0
 		var width = 0;
 
 		function progress(){
-			
+			// checks to see if the currentTime of the song is greater than 0
+			// if it is, it runs the function and updates the width of the progress bar div
 			if (song.currentTime > 0) {
 				width = Math.floor((100/song.duration)*song.currentTime);
+				// sets the width of the progress bar equal to 100, divided by duration of the song, multiplied by the currenttime of the song
+				// math.floor just rounds down for us to make sure an integer is returned and not a float or decimal
 				progress.style.width = width + '%';
-
+				// sets the width attribute equal to the width variable as a percent
 			}
 		}
 	}
