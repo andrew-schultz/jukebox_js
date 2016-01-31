@@ -12,10 +12,6 @@ function Bong(title, artist, url){
 	this.url = url
 }
 
-function Getit(){
-	var x = document.get
-}
-
 var Jukebox = function(){
 	// Thanks mozilla developer guides for helping with the syntax!
 
@@ -28,17 +24,24 @@ var Jukebox = function(){
 	var p = document.getElementById("play");
 	var s = document.getElementById("pause");
 	var display = document.getElementById("display");
+	var song = document.getElementById('song');
 	var idnum = 0
+	var leng = song.duration;
 
 	// when called will play the selected audio file
 	this.play = function(){
-		// song.setAttribute("src", this.songs[i].url);
 		a.play();
-		
 		p.className = "hide";
 		s.className = "";
 		displayT.innerHTML = (this.songs[i].title);
 		displayA.innerHTML = (this.songs[i].artist);
+		console.log(song.duration);
+		
+		this.time(leng);
+
+
+		//// insert function for song duration bar now ////
+
 	},
 
 	// when called will pause the selected audio file
@@ -60,7 +63,6 @@ var Jukebox = function(){
 
 	this.addSong = function(i){
 	// adds song selected (file) to the songs array
-		// url = document.getElementById("addSong").value
 		Song.apply(this, arguments)
 		i = new Song()
 		this.songs.push(i)
@@ -69,17 +71,17 @@ var Jukebox = function(){
 		// creates an li node
 		var title = document.createTextNode((document.getElementById("songTitle").value) + ", " + (document.getElementById("songArtist").value));
 		// creates the text "node" for title and artist to go within the li
-		var id = li.setAttribute("id", idnum);
+		var iq = li.setAttribute("id", idnum);
 		// creates an idea for the li equal to the elements location in the list
+		var zi = li.id;
+		li.setAttribute("class", "plsong");
+		li.setAttribute("onclick", "jukebox.jump(" + zi + ")");
 		li.appendChild(title);
 		// adds the title and artist to the li
 		document.getElementById("list").appendChild(li);
 		// appends the li to the end of the ul with the id list
 		idnum += 1;
 	}
-	
-// element.addEventListener('click',handlerFunction,false); 
-
 
 	this.preload = function(x){
 		this.songs.push(x)
@@ -90,9 +92,7 @@ var Jukebox = function(){
 		// creates the text "node" for title and artist to go within the li
 		var iq = li.setAttribute("id", idnum);
 		var zi = li.id;
-		console.log(zi);
 		li.setAttribute("class", "plsong");
-		
 		li.setAttribute("onclick", "jukebox.jump(" + zi + ")");
 		
 		li.appendChild(title);
@@ -102,29 +102,17 @@ var Jukebox = function(){
 
 		idnum += 1;
 	}
-
-	this.getElementBy
 	
 	this.jump = function(par){
 		i = par;
 		song.setAttribute("src", this.songs[par].url);
 		displayT.innerHTML = (this.songs[par].title);
 		displayA.innerHTML = (this.songs[par].artist);
+		this.time(leng);
 		a.play();
+		p.className = "hide";
+		s.className = "";
 	}
-
-	
-
-	var song = document.getElementById('song');
-
-
-	// set a variable equal to the whats currently playing
-	// when you click next, make that variable go up by 1
-	// have that correspond to the the next item in the songs.array
-
-
-	// 'i' is serving as a stand in for current_song in this case
-	var i = 0;
 
 	this.next = function(){	
 		if(i < this.songs.length - 1){
@@ -136,6 +124,7 @@ var Jukebox = function(){
 		song.setAttribute("src", this.songs[i].url);
 		displayT.innerHTML = (this.songs[i].title);
 		displayA.innerHTML = (this.songs[i].artist);
+		this.time(leng);
 		a.play();
 	}
 
@@ -149,6 +138,7 @@ var Jukebox = function(){
 		song.setAttribute("src", this.songs[i].url);
 		displayT.innerHTML = (this.songs[i].title);
 		displayA.innerHTML = (this.songs[i].artist);
+		this.time(leng);
 		a.play();
 	}
 
@@ -158,13 +148,29 @@ var Jukebox = function(){
 		song.setAttribute("src", this.songs[i].url);
 		displayT.innerHTML = (this.songs[i].title);
 		displayA.innerHTML = (this.songs[i].artist);
+		this.time(leng);
 		a.play();
+		p.className = "hide";
+		s.className = "";
 	}
 
-	var display = document.getElementById("display");
-}
+	this.time = function(){
+		// sets the div with the id to a variable
+		var progress = document.getElementById("progress");
+		// sets a variable (width) to 0
+		var width = 0;
 
-// for making a queue: need to create a new element and then append it to whevere you want it to go
+		function progress(){
+			
+			if (song.currentTime > 0) {
+				width = Math.floor((100/song.duration)*song.currentTime);
+				progress.style.width = width + '%';
+
+			}
+		}
+	}
+	
+}
 
 first = new Bong("Fire on the Mountain", "Grateful Dead", "https://ia802608.us.archive.org/3/items/gd1977-05-08.shure57.stevenson.29303.flac16/gd1977-05-08d02t05.mp3");
 sec = new Bong("Estimated Prophet", "Grateful Dead", "https://ia802608.us.archive.org/3/items/gd1977-05-08.shure57.stevenson.29303.flac16/gd1977-05-08d02t06.mp3");
@@ -180,6 +186,7 @@ eleven = new Bong("Mr. Larkin", "State Radio", "https://ia800302.us.archive.org/
 
 
 var jukebox = new Jukebox;
+
 jukebox.preload(first);
 jukebox.preload(sec);
 jukebox.preload(third);

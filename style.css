@@ -195,6 +195,10 @@ ul {
 	margin-top: 10px;
 }
 
+#displayA {
+	margin-top: 10px;
+}
+
 #display {
 	padding: 20px;
 	min-width: 200px;
@@ -209,10 +213,27 @@ ul {
 	margin-top: 20vh;
 }
 
+#bar {
+	position: relative;
+	height: 10px;
+	width: 100%;
+	border: 1px solid #f2f2f2;
+	border-radius: 5px;
+	margin-top: 10px;
+
+}
+
+#progress {
+	position: absolute;
+	height: 100%;
+	background-color: #ffffff;	
+
+}
+
 .form {
 	float: left;
 	margin-left: 5%;
-	margin-top: -9%;
+	margin-top: -10%;
 	color: #ffffff;
 	font-size: 20px;
 }
@@ -229,6 +250,8 @@ ul {
 #playlist {
 	float: right;
 	max-width: 300px;
+	max-height: 300px;
+	overflow: scroll;
 	margin-right: 5%;
 	margin-top: -13%;
 	color: #ffffff;
