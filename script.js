@@ -26,19 +26,9 @@ var Jukebox = function(){
 	var display = document.getElementById("display");
 	var song = document.getElementById('song');
 	var idnum = 0;
-	var leng = song.duration;
 	var autoplay = true;
 
 
-	// if (autoplay == true) {
-	// 	if (song.currentTime == song.duration) {
-	// 		if(i < this.songs.length - 1){
-	// 			i +=1;
-	// 		} else {
-	// 			i = 0
-	// 		};
-	// 	}
-	// }
 	this.autoplay = function(){
 		if (autoplay == true) {
 			if (song.currentTime == song.duration) {
@@ -53,14 +43,13 @@ var Jukebox = function(){
 
 	// when called will play the selected audio file
 	this.play = function(){
-		a.play();
 		p.className = "hide";
 		s.className = "";
 		displayT.innerHTML = (this.songs[i].title);
 		displayA.innerHTML = (this.songs[i].artist);
-		this.autoplay();
 		this.time(song.duration);
-		
+		this.autoplay();
+		a.play();
 	},
 
 	// when called will pause the selected audio file
@@ -125,12 +114,7 @@ var Jukebox = function(){
 	this.jump = function(par){
 		i = par;
 		song.setAttribute("src", this.songs[par].url);
-		displayT.innerHTML = (this.songs[par].title);
-		displayA.innerHTML = (this.songs[par].artist);
-		this.time(leng);
-		a.play();
-		p.className = "hide";
-		s.className = "";
+		this.play();
 	}
 
 	this.next = function(){	
@@ -141,12 +125,7 @@ var Jukebox = function(){
 		};
 		console.log(i);
 		song.setAttribute("src", this.songs[i].url);
-		displayT.innerHTML = (this.songs[i].title);
-		displayA.innerHTML = (this.songs[i].artist);
-		this.time(leng);
-		p.className = "hide";
-		s.className = "";
-		a.play();
+		this.play();
 	}
 
 	this.previous = function(){
@@ -157,24 +136,14 @@ var Jukebox = function(){
 		};
 		console.log(i);
 		song.setAttribute("src", this.songs[i].url);
-		displayT.innerHTML = (this.songs[i].title);
-		displayA.innerHTML = (this.songs[i].artist);
-		this.time(leng);
-		p.className = "hide";
-		s.className = "";
-		a.play();
+		this.play();
 	}
 
 	this.random = function(){
 		var random = Math.floor((Math.random() * this.songs.length));
 		i = random
 		song.setAttribute("src", this.songs[i].url);
-		displayT.innerHTML = (this.songs[i].title);
-		displayA.innerHTML = (this.songs[i].artist);
-		this.time(leng);
-		a.play();
-		p.className = "hide";
-		s.className = "";
+		this.play();
 	}
 
 	this.time = function(){
@@ -184,7 +153,7 @@ var Jukebox = function(){
 		var barwidth = 0;		
 		// checks to see if the currentTime of the song is less than the total length of the song
 		// if it is, it runs the function and updates the width of the progress bar div
-		if (song.currentTime < song.duration) {
+		if ((song.currentTime < song.duration) || (song.currentTime == 0)) {
 			setInterval(function bar(){
 				// runs this function every second
 				console.log(song.currentTime);
