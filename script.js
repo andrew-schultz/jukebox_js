@@ -27,6 +27,29 @@ var Jukebox = function(){
 	var song = document.getElementById('song');
 	var idnum = 0;
 	var leng = song.duration;
+	var autoplay = true;
+
+
+	// if (autoplay == true) {
+	// 	if (song.currentTime == song.duration) {
+	// 		if(i < this.songs.length - 1){
+	// 			i +=1;
+	// 		} else {
+	// 			i = 0
+	// 		};
+	// 	}
+	// }
+	this.autoplay = function(){
+		if (autoplay == true) {
+			if (song.currentTime == song.duration) {
+				if(i < this.songs.length - 1){
+					i +=1;
+				} else {
+					i = 0
+				};
+			}
+		}
+	},
 
 	// when called will play the selected audio file
 	this.play = function(){
@@ -35,13 +58,9 @@ var Jukebox = function(){
 		s.className = "";
 		displayT.innerHTML = (this.songs[i].title);
 		displayA.innerHTML = (this.songs[i].artist);
-		console.log(song.duration);
+		this.autoplay();
+		this.time(song.duration);
 		
-		this.time(leng);
-
-
-		//// insert function for song duration bar now ////
-
 	},
 
 	// when called will pause the selected audio file
@@ -158,27 +177,26 @@ var Jukebox = function(){
 		s.className = "";
 	}
 
-	///////for some reason this isn't woking right now
-	///
 	this.time = function(){
 		// sets the div with the id (progress)to a variable
-		var progress = document.getElementById("progress");
+		var prog = document.getElementById("prog");
 		// sets a variable (width) to 0
-		var width = 0;
-
-		function progress(){
-			// checks to see if the currentTime of the song is greater than 0
-			// if it is, it runs the function and updates the width of the progress bar div
-			if (song.currentTime > 0) {
-				width = Math.floor((100/song.duration)*song.currentTime);
-				// sets the width of the progress bar equal to 100, divided by duration of the song, multiplied by the currenttime of the song
-				// math.floor just rounds down for us to make sure an integer is returned and not a float or decimal
-				progress.style.width = width + '%';
+		var barwidth = 0;		
+		// checks to see if the currentTime of the song is less than the total length of the song
+		// if it is, it runs the function and updates the width of the progress bar div
+		if (song.currentTime < song.duration) {
+			setInterval(function bar(){
+				// runs this function every second
+				console.log(song.currentTime);
+				barwidth = (song.currentTime/song.duration)*100;
+				// sets the width of the progress bar equal to the currentTIme of the song divided by duration of the song, multiplied by 100
+				prog.style.width = barwidth + '%';
 				// sets the width attribute equal to the width variable as a percent
-			}
+			}, 1000);
+		} else  {
+			this.break;
 		}
-	}
-	
+	}	
 }
 
 first = new Bong("Fire on the Mountain", "Grateful Dead", "https://ia802608.us.archive.org/3/items/gd1977-05-08.shure57.stevenson.29303.flac16/gd1977-05-08d02t05.mp3");
